@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { CustomToastrService, MessageType, ToastrPosition } from 'src/app/services/custom-toastr.service';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  constructor(toastr:CustomToastrService){
+    toastr.message("Merhaba","Dünya",MessageType.Warning);
+  }
 
 }
