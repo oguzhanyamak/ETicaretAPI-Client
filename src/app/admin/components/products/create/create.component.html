@@ -1,1 +1,65 @@
-<p>create works!</p>
+<form [formGroup]="frm" class="row g-3" (ngSubmit)="create(frm.value)">
+    <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Ürün Adı</label>
+        <input type="email" class="form-control" formControlName="name">
+        <div *ngIf="!name?.valid && (name?.dirty || name?.touched)" class="text-danger">
+            <div *ngIf="name?.errors?.['required']">
+                Ürün Adı Girişi Zorunludur.
+            </div>
+            <div *ngIf="name?.errors?.['minlength']">
+                Ürün Adı En Az 3 Karakter Olmalıdır.
+            </div>
+            <div *ngIf="name?.errors?.['pattern']">
+                Ürün Adı En Az 5 Karakter Olmalıdır.
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-6">
+                <label for="formFile" class="form-label">Default file input example</label>
+                <input class="form-control" type="file">
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <label for="inputAddress" class="form-label">Ürün Açıklaması</label>
+        <textarea class="form-control"></textarea>
+    </div>
+    <div class="col-md-6">
+        <label for="inputCity" class="form-label">Ücret</label>
+        <input type="number" min="0" class="form-control" formControlName="price">
+        <div *ngIf="!price?.valid && (price?.dirty || price?.touched)" class="text-danger">
+            <div *ngIf="price?.errors?.['required']">
+                Fiyat Girişi Zorunludur.
+            </div>
+            <div *ngIf="price?.errors?.['min']">
+                Fiyat 0'dan büyük olmalıdır
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <label for="inputState" class="form-label">Kategori</label>
+        <select id="inputState" class="form-select">
+            <option selected>Choose...</option>
+            <option>...</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <label for="inputZip" class="form-label">Stok</label>
+        <input type="number" class="form-control" formControlName="stock">
+        <div *ngIf="!stock?.valid && (stock?.dirty || stock?.touched)" class="text-danger">
+            <div *ngIf="stock?.errors?.['required']">
+                Stok Girişi Zorunludur.
+            </div>
+            <div *ngIf="stock?.errors?.['min']">
+                Stok 0'dan büyük olmalıdır
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+</form>
