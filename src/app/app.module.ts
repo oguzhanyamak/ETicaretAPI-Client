@@ -7,10 +7,11 @@ import { UIModule } from './ui/ui.module';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StatusDirective } from './directives/admin/status.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,7 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ToastrModule.forRoot(),
     HttpClientModule
   ],
-  providers: [{provide:"baseUrl",useValue:"https://localhost:7131/api",multi:true}],
+  providers: [{provide:"baseUrl",useValue:"https://localhost:7126/api",multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

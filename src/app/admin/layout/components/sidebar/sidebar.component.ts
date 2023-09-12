@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class SidebarComponent {
 
+  active = ["active{color:red;}"]
+
+  sidebarOpen:boolean = false;
+
+  changeSidebarStatus(){
+    this.sidebarOpen = !this.sidebarOpen;
+    console.log(this.sidebarOpen);
+  }
 }

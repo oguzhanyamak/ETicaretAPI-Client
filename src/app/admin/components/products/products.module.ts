@@ -4,6 +4,7 @@ import { ProductsComponent } from './products.component';
 import { RouterModule } from '@angular/router';
 import { CreateComponent } from './create/create.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StatusDirective } from 'src/app/directives/admin/status.directive';
 
 
 
@@ -11,7 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     ProductsComponent,
-    CreateComponent
+    CreateComponent,
+    StatusDirective
   ],
   imports: [
     CommonModule,

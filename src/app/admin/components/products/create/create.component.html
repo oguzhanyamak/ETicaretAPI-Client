@@ -17,10 +17,11 @@
     <div class="col-md-6">
         <div class="row">
             <div class="col-md-6">
-                <label for="formFile" class="form-label">Default file input example</label>
-                <input class="form-control" type="file">
+                <label for="formFile" class="form-label">Ürün Görseli</label>
+                <input class="form-control" type="file" (change)="imageUpload($event)" formControlName="image">
             </div>
             <div class="col-md-6">
+                <img [src]="url" *ngIf="url != null" style="width: 100px;height: 100px;">
             </div>
         </div>
     </div>

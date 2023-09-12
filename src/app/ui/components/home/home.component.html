@@ -1,322 +1,599 @@
-
-<head>
-    <meta charset="utf-8">
-    <title>EShopper - Bootstrap Shop Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <!-- Libraries Stylesheet -->
-    <!-- Customized Bootstrap Stylesheet -->
-  </head>
-  <body>
-    <!-- Topbar Start -->
-    <div class="container-fluid">
-        <div class="row align-items-center py-3 px-xl-5">
-            <div class="col-lg-3 d-none d-lg-block">
-                <a href="" class="text-decoration-none">
-                    <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
-                </a>
-            </div>
-            <div class="col-lg-6 col-6 text-left">
-                <form action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for products">
-                        <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
-                                <i class="fa fa-search"></i>
-                            </span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-lg-3 col-6 text-right">
-                <a href="" class="btn border">
-                    <i class="fas fa-heart text-primary"></i>
-                    <span class="badge">0</span>
-                </a>
-                <a href="" class="btn border">
-                    <i class="fas fa-shopping-cart text-primary"></i>
-                    <span class="badge">0</span>
-                </a>
-            </div>
+<!--Main Navigation-->
+<header>
+  <!-- Jumbotron -->
+  <div class="p-3 text-center bg-white border-bottom">
+    <div class="container">
+      <div class="row gy-3">
+        <!-- Left elements -->
+        <div class="col-lg-2 col-sm-4 col-4">
+          <a href="https://mdbootstrap.com/" target="_blank" class="float-start">
+            <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="35" />
+          </a>
         </div>
-    </div>
-    <!-- Topbar End -->
-  
-  
-    <!-- Navbar Start -->
-    <div class="container-fluid mb-5">
-        <div class="row border-top px-xl-5">
-            <div class="col-lg-3 d-none d-lg-block">
-                <a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
-                    <h6 class="m-0">Categories</h6>
-                </a>
-                <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
-                    <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link" data-toggle="dropdown">Dresses</a>
-                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="" class="dropdown-item">Men's Dresses</a>
-                                <a href="" class="dropdown-item">Women's Dresses</a>
-                                <a href="" class="dropdown-item">Baby's Dresses</a>
-                            </div>
-                        </div>
-                        <a href="" class="nav-item nav-link">Shirts</a>
-                        <a href="" class="nav-item nav-link">Jeans</a>
-                        <a href="" class="nav-item nav-link">Swimwear</a>
-                        <a href="" class="nav-item nav-link">Sleepwear</a>
-                        <a href="" class="nav-item nav-link">Sportswear</a>
-                        <a href="" class="nav-item nav-link">Jumpsuits</a>
-                        <a href="" class="nav-item nav-link">Blazers</a>
-                        <a href="" class="nav-item nav-link">Jackets</a>
-                        <a href="" class="nav-item nav-link">Shoes</a>
-                    </div>
-                </nav>
+        <!-- Left elements -->
+
+        <!-- Center elements -->
+        <div class="order-lg-last col-lg-5 col-sm-8 col-8">
+          <div class="d-flex float-end">
+            <a href="" class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank"
+              data-bs-toggle="modal" data-bs-target="#signInModal">
+              <p class="d-none d-md-block mb-0">Sign in</p><i class="ms-1 bi bi-box-arrow-in-right"></i>
+            </a>
+            <a href="" class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank"
+              data-bs-toggle="modal" data-bs-target="#loginModal">
+              <p class="d-none d-md-block mb-0">Log In</p><i class="ms-1 bi bi-box-arrow-in-left"></i>
+            </a>
+          </div>
+        </div>
+        <!-- Center elements -->
+
+        <!-- Right elements -->
+        <div class="col-lg-5 col-md-12 col-12">
+          <div class="input-group float-center">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Ürün Adı Veya Kategori"
+                aria-label="Recipient's username" aria-describedby="button-addon2">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
+                  class="bi bi-search"></i></button>
             </div>
-            <div class="col-lg-9">
-                <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-                    <a href="" class="text-decoration-none d-block d-lg-none">
-                        <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
-                    </a>
-                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </nav>
-                <div class="container-fluid pt-5">
-                  <div class="row px-xl-5 pb-3">
-                      <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                          <div class="card product-item border-0 mb-4">
-                              <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                  <img class="img-fluid w-100" src="https://picsum.photos/seed/picsum/200/300" alt="">
-                              </div>
-                              <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                  <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                                  <div class="d-flex justify-content-center">
-                                      <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                                  </div>
-                              </div>
-                              <div class="card-footer d-flex justify-content-between bg-light border">
-                                  <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                                  <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
+          </div>
+        </div>
+        <!-- Right elements -->
+      </div>
+    </div>
+  </div>
+  <!-- Jumbotron -->
+</header>
+
+<!-- category -->
+<section>
+  <div class="container pt-5">
+    <nav class="row gy-4">
+      <div class="col-lg-6 col-md-12">
+        <div class="row">
+          <div class="col-3">
+            <a href="#" class="text-center d-flex flex-column justify-content-center">
+              <button type="button" class="btn btn-outline-secondary mx-auto p-3 mb-2" data-mdb-ripple-color="dark">
+                <i class="fas fa-couch fa-xl fa-fw"></i>
+              </button>
+              <div class="text-dark">Interior items</div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <div class="row">
+          <div class="col-3">
+            <a href="#" class="text-center d-flex flex-column justify-content-center">
+              <button type="button" class="btn btn-outline-secondary mx-auto p-3 mb-2" data-mdb-ripple-color="dark">
+                <i class="fas fa-car-side fa-xl fa-fw"></i>
+              </button>
+              <div class="text-dark">Automobiles</div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <div class="row">
+          <div class="col-3">
+            <a href="#" class="text-center d-flex flex-column justify-content-center">
+              <button type="button" class="btn btn-outline-secondary mx-auto p-3 mb-2" data-mdb-ripple-color="dark">
+                <i class="fas fa-baby-carriage fa-xl fa-fw"></i>
+              </button>
+              <div class="text-dark">Kid's toys</div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <div class="row">
+          <div class="col-3">
+            <a href="#" class="text-center d-flex flex-column justify-content-center">
+              <button type="button" class="btn btn-outline-secondary mx-auto p-3 mb-2" data-mdb-ripple-color="dark">
+                <i class="fas fa-mobile fa-xl fa-fw"></i>
+              </button>
+              <div class="text-dark">Smartphones</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</section>
+<!-- category -->
+
+<!-- Products -->
+<section>
+  <div class="container my-5">
+    <header class="mb-4">
+      <h3>New products</h3>
+    </header>
+
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card my-2 shadow-0">
+          <a href="#" class="">
+            <div class="mask" style="height: 50px;">
+              <div class="d-flex justify-content-start align-items-start h-100 m-2">
+                <h6><span class="badge bg-danger pt-1">New</span></h6>
               </div>
             </div>
+            <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/1.webp"
+              class="card-img-top rounded-2" style="aspect-ratio: 1 / 1" />
+          </a>
+          <div class="card-body p-0 pt-3">
+            <a href="#!" class="btn btn-light border px-2 pt-2 float-end icon-hover"><i
+                class="fas fa-heart fa-lg px-1 text-secondary"></i></a>
+            <h5 class="card-title">$29.95</h5>
+            <p class="card-text mb-0">GoPro action camera 4K</p>
+            <p class="text-muted">
+              Model: X-200
+            </p>
+          </div>
         </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card my-2 shadow-0">
+          <a href="#" class="">
+            <div class="mask" style="height: 50px;">
+              <div class="d-flex justify-content-start align-items-start h-100 m-2">
+                <h6><span class="badge pt-1" style="background-color: #f87217;">Offer</span></h6>
+              </div>
+            </div>
+            <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/2.webp"
+              class="card-img-top rounded-2" style="aspect-ratio: 1 / 1" />
+          </a>
+          <div class="card-body p-0 pt-2">
+            <a href="#!" class="btn btn-light border px-2 pt-2 float-end icon-hover"><i class="bi bi-heart"></i></a>
+            <h5 class="card-title">$590.00</h5>
+            <p class="card-text mb-0">Canon EOS professional</p>
+            <p class="text-muted">
+              Capacity: 128GB
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card my-2 shadow-0">
+          <a href="#" class="">
+            <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/3.webp"
+              class="card-img-top rounded-2" style="aspect-ratio: 1 / 1" />
+          </a>
+          <div class="card-body p-0 pt-2">
+            <a href="#!" class="btn btn-light border px-2 pt-2 float-end icon-hover"><i
+                class="fas fa-heart fa-lg px-1 text-secondary"></i></a>
+            <h5 class="card-title">$29.95</h5>
+            <p class="card-text mb-0">Modern product name here</p>
+            <p class="text-muted">
+              Sizes: S, M, XL
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card my-2 shadow-0">
+          <a href="#" class="">
+            <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/4.webp"
+              class="card-img-top rounded-2" style="aspect-ratio: 1 / 1" />
+          </a>
+          <div class="card-body p-0 pt-2">
+            <a href="#!" class="btn btn-light border px-2 pt-2 float-end icon-hover"><i
+                class="fas fa-heart fa-lg px-1 text-secondary"></i></a>
+            <h5 class="card-title">$1099.00</h5>
+            <p class="card-text mb-0">Apple iPhone 13 Pro max</p>
+            <p class="text-muted">
+              Color: Black, Memory: 128GB
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card my-2 shadow-0">
+          <a href="#" class="">
+            <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/5.webp"
+              class="card-img-top rounded-2" style="aspect-ratio: 1 / 1" />
+          </a>
+          <div class="card-body p-0 pt-2">
+            <a href="#!" class="btn btn-light border px-2 pt-2 float-end icon-hover"><i
+                class="fas fa-heart fa-lg px-1 text-secondary"></i></a>
+            <h5 class="card-title">$29.95</h5>
+            <p class="card-text mb-0">Modern product name here</p>
+            <p class="text-muted">
+              Sizes: S, M, XL
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card my-2 shadow-0">
+          <a href="#" class="">
+            <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/6.webp"
+              class="card-img-top rounded-2" style="aspect-ratio: 1 / 1" />
+          </a>
+          <div class="card-body p-0 pt-2">
+            <a href="#!" class="btn btn-light border px-2 pt-2 float-end icon-hover"><i
+                class="fas fa-heart fa-lg px-1 text-secondary"></i></a>
+            <h5 class="card-title">$29.95</h5>
+            <p class="card-text mb-0">Modern product name here</p>
+            <p class="text-muted">
+              Model: X-200
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card my-2 shadow-0">
+          <a href="#" class="">
+            <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/7.webp"
+              class="card-img-top rounded-2" style="aspect-ratio: 1 / 1" />
+          </a>
+          <div class="card-body p-0 pt-2">
+            <a href="#!" class="btn btn-light border px-2 pt-2 float-end icon-hover"><i
+                class="fas fa-heart fa-lg px-1 text-secondary"></i></a>
+            <h5 class="card-title">$29.95</h5>
+            <p class="card-text mb-0">Modern product name here</p>
+            <p class="text-muted">
+              Sizes: S, M, XL
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card my-2 shadow-0">
+          <a href="#" class="">
+            <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/8.webp"
+              class="card-img-top rounded-2" style="aspect-ratio: 1 / 1" />
+          </a>
+          <div class="card-body p-0 pt-2">
+            <a href="#!" class="btn btn-light border px-2 pt-2 float-end icon-hover"><i
+                class="fas fa-heart fa-lg px-1 text-secondary"></i></a>
+            <h5 class="card-title">$29.95</h5>
+            <p class="card-text mb-0">Modern product name here</p>
+            <p class="text-muted">
+              Material: Jeans
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- Navbar End -->
-  
-  
-    <!-- Featured Start -->
-    <div class="container-fluid pt-5">
-        <div class="row px-xl-5 pb-3">
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">Quality Product</h5>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
-                    <h5 class="font-weight-semi-bold m-0">Free Shipping</h5>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                    <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">14-Day Return</h5>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
-                </div>
-            </div>
+  </div>
+</section>
+<!-- Products -->
+
+<!-- Features -->
+<section>
+  <div class="container">
+    <div class="card p-4 bg-primary">
+      <div class="row align-items-center">
+        <div class="col">
+          <h4 class="mb-0 text-white">Best products and brands in store</h4>
+          <p class="mb-0 text-white-50">Trendy products and text to build on the card title</p>
         </div>
+        <div class="col-auto"><a class="btn btn-white text-primary shadow-0" href="#">Discover</a></div>
+      </div>
     </div>
-    <!-- Featured End -->
-    <!-- Categories Start -->
-    <div class="container-fluid pt-5">
-        <div class="row px-xl-5 pb-3">
-            <div class="col-lg-4 col-md-6 pb-1">
-                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="https://picsum.photos/seed/picsum/200/300">
-                    </a>
-                    <h5 class="font-weight-semi-bold m-0">Men's dresses</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 pb-1">
-                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="https://picsum.photos/seed/picsum/200/300" alt="">
-                    </a>
-                    <h5 class="font-weight-semi-bold m-0">Women's dresses</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 pb-1">
-                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="https://picsum.photos/seed/picsum/200/300" alt="">
-                    </a>
-                    <h5 class="font-weight-semi-bold m-0">Baby's dresses</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 pb-1">
-                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="https://picsum.photos/seed/picsum/200/300" alt="">
-                    </a>
-                    <h5 class="font-weight-semi-bold m-0">Accerssories</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 pb-1">
-                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="https://picsum.photos/seed/picsum/200/300" alt="">
-                    </a>
-                    <h5 class="font-weight-semi-bold m-0">Bags</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 pb-1">
-                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="https://picsum.photos/seed/picsum/200/300" alt="">
-                    </a>
-                    <h5 class="font-weight-semi-bold m-0">Shoes</h5>
-                </div>
-            </div>
+  </div>
+</section>
+<!-- Features -->
+
+<!-- Recommended -->
+<section>
+  <div class="container my-5">
+    <header class="mb-4">
+      <h3>Recommended</h3>
+    </header>
+
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card my-2 shadow-0">
+          <a href="#" class="">
+            <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/9.webp"
+              class="card-img-top rounded-2" style="aspect-ratio: 1 / 1" />
+          </a>
+          <div class="card-body p-0 pt-3">
+            <a href="#!" class="btn btn-light border px-2 pt-2 float-end icon-hover"><i
+                class="fas fa-heart fa-lg px-1 text-secondary"></i></a>
+            <h5 class="card-title">$17.00</h5>
+            <p class="card-text mb-0">Blue jeans shorts for men</p>
+            <p class="text-muted">
+              Sizes: S, M, XL
+            </p>
+          </div>
         </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card my-2 shadow-0">
+          <a href="#" class="">
+            <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/10.webp"
+              class="card-img-top rounded-2" style="aspect-ratio: 1 / 1" />
+          </a>
+          <div class="card-body p-0 pt-2">
+            <a href="#!" class="btn btn-light border px-2 pt-2 float-end icon-hover"><i
+                class="fas fa-heart fa-lg px-1 text-secondary"></i></a>
+            <h5 class="card-title">$9.50</h5>
+            <p class="card-text mb-0">Slim fit T-shirt for men</p>
+            <p class="text-muted">
+              Sizes: S, M, XL
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card my-2 shadow-0">
+          <a href="#" class="">
+            <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/11.webp"
+              class="card-img-top rounded-2" style="aspect-ratio: 1 / 1" />
+          </a>
+          <div class="card-body p-0 pt-2">
+            <a href="#!" class="btn btn-light border px-2 pt-2 float-end icon-hover"><i
+                class="fas fa-heart fa-lg px-1 text-secondary"></i></a>
+            <h5 class="card-title">$29.95</h5>
+            <p class="card-text mb-0">Modern product name here</p>
+            <p class="text-muted">
+              Sizes: S, M, XL
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card my-2 shadow-0">
+          <a href="#" class="">
+            <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/12.webp"
+              class="card-img-top rounded-2" style="aspect-ratio: 1 / 1" />
+          </a>
+          <div class="card-body p-0 pt-2">
+            <a href="#!" class="btn btn-light border px-2 pt-2 float-end icon-hover"><i
+                class="fas fa-heart fa-lg px-1 text-secondary"></i></a>
+            <h5 class="card-title">$29.95</h5>
+            <p class="card-text mb-0">Modern product name here</p>
+            <p class="text-muted">
+              Material: Jeans
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- Categories End -->
-  
-  
-    <!-- Offer Start -->
-    <div class="container-fluid offer pt-5">
-        <div class="row px-xl-5">
-            <div class="col-md-6 pb-4">
-                <div class="position-relative bg-secondary text-center text-md-right text-white mb-2 py-5 px-5">
-                    <img src="https://picsum.photos/seed/picsum/200/300" alt="">
-                    <div class="position-relative" style="z-index: 1;">
-                        <h5 class="text-uppercase text-primary mb-3">20% off the all order</h5>
-                        <h1 class="mb-4 font-weight-semi-bold">Spring Collection</h1>
-                        <a href="" class="btn btn-outline-primary py-md-2 px-md-3">Shop Now</a>
-                    </div>
-                </div>
+  </div>
+</section>
+<!-- Recommended -->
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+  <!-- Section: Social media -->
+  <section class="p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    <div class="container">
+      <div class="row d-flex">
+        <!-- Left -->
+        <div class="col-md-6 col-sm-12 mb-2 mb-md-0 d-flex justify-content-center justify-content-md-start">
+          <div class="">
+            <div class="input-group" style="max-width: 400px;">
+              <input type="email" class="form-control border" placeholder="Email" aria-label="Email"
+                aria-describedby="button-addon2" />
+              <button class="btn btn-light border" type="button" id="button-addon2" data-mdb-ripple-color="dark">
+                Subscribe
+              </button>
             </div>
-            <div class="col-md-6 pb-4">
-                <div class="position-relative bg-secondary text-center text-md-left text-white mb-2 py-5 px-5">
-                    <img src="https://picsum.photos/seed/picsum/200/300" alt="">
-                    <div class="position-relative" style="z-index: 1;">
-                        <h5 class="text-uppercase text-primary mb-3">20% off the all order</h5>
-                        <h1 class="mb-4 font-weight-semi-bold">Winter Collection</h1>
-                        <a href="" class="btn btn-outline-primary py-md-2 px-md-3">Shop Now</a>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <!-- Left -->
+
+        <!-- Right -->
+        <div class="col-md-6 col-sm-12 float-center">
+          <div class="float-md-end">
+            <a class="btn btn-icon btn-light text-secondary px-3 border" title="Facebook" target="_blank" href="#"><i
+                class="fab fa-facebook-f fa-lg"></i></a>
+            <a class="btn btn-icon btn-light text-secondary px-3 border" title="Instagram" target="_blank" href="#"><i
+                class="fab fa-instagram fa-lg"></i></a>
+            <a class="btn btn-icon btn-light text-secondary px-3 border" title="Youtube" target="_blank" href="#"><i
+                class="fab fa-youtube fa-lg"></i></a>
+            <a class="btn btn-icon btn-light text-secondary px-3 border" title="Twitter" target="_blank" href="#"><i
+                class="fab fa-twitter fa-lg"></i></a>
+          </div>
+        </div>
+        <!-- Right -->
+      </div>
     </div>
-    <!-- Offer End -->
-  
-    <!-- Footer Start -->
-    <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
-        <div class="row px-xl-5 pt-5">
-            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
-                <a href="" class="text-decoration-none">
-                    <h1 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">E</span>Shopper</h1>
-                </a>
-                <p>Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum no sit erat lorem et magna ipsum dolore amet erat.</p>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
-            </div>
-            <div class="col-lg-8 col-md-12">
-                <div class="row">
-                    <div class="col-md-4 mb-5">
-                        <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-                            <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
-                            <a class="text-dark mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                            <a class="text-dark mb-2" href="checkout.html"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                            <a class="text-dark" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-                            <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
-                            <a class="text-dark mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                            <a class="text-dark mb-2" href="checkout.html"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                            <a class="text-dark" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="font-weight-bold text-dark mb-4">Newsletter</h5>
-                        <form action="">
-                            <div class="form-group">
-                                <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
-                                    required="required" />
-                            </div>
-                            <div>
-                                <button class="btn btn-primary btn-block border-0 py-3" type="submit">Subscribe Now</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5 mb-4">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-12 col-lg-3 col-sm-12">
+          <!-- Content -->
+          <a href="https://mdbootstrap.com/" target="_blank" class="ms-md-2">
+            <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="35" />
+          </a>
+          <p class="mt-3">
+            © 2023 Copyright: MDBootstrap.com.
+          </p>
         </div>
-        <div class="row border-top border-light mx-xl-5 py-4">
-            <div class="col-md-6 px-xl-0">
-                <p class="mb-md-0 text-center text-md-left text-dark">
-                    &copy; <a class="text-dark font-weight-semi-bold" href="#">Your Site Name</a>. All Rights Reserved. Designed
-                    by
-                    <a class="text-dark font-weight-semi-bold" href="https://htmlcodex.com">HTML Codex</a><br>
-                    Distributed By <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                </p>
-            </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-6 col-sm-4 col-lg-2">
+          <!-- Links -->
+          <h6 class="text-uppercase text-dark fw-bold mb-2">
+            Store
+          </h6>
+          <ul class="list-unstyled mb-4">
+            <li><a class="text-muted" href="#">About us</a></li>
+            <li><a class="text-muted" href="#">Find store</a></li>
+            <li><a class="text-muted" href="#">Categories</a></li>
+            <li><a class="text-muted" href="#">Blogs</a></li>
+          </ul>
         </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-6 col-sm-4 col-lg-2">
+          <!-- Links -->
+          <h6 class="text-uppercase text-dark fw-bold mb-2">
+            Information
+          </h6>
+          <ul class="list-unstyled mb-4">
+            <li><a class="text-muted" href="#">Help center</a></li>
+            <li><a class="text-muted" href="#">Money refund</a></li>
+            <li><a class="text-muted" href="#">Shipping info</a></li>
+            <li><a class="text-muted" href="#">Refunds</a></li>
+          </ul>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-6 col-sm-4 col-lg-2">
+          <!-- Links -->
+          <h6 class="text-uppercase text-dark fw-bold mb-2">
+            Support
+          </h6>
+          <ul class="list-unstyled mb-4">
+            <li><a class="text-muted" href="#">Help center</a></li>
+            <li><a class="text-muted" href="#">Documents</a></li>
+            <li><a class="text-muted" href="#">Account restore</a></li>
+            <li><a class="text-muted" href="#">My orders</a></li>
+          </ul>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-12 col-sm-12 col-lg-3">
+          <!-- Links -->
+          <h6 class="text-uppercase text-dark fw-bold mb-2">Our apps</h6>
+          <a href="#" class="mb-2 d-inline-block"> <img
+              src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/misc/btn-appstore.webp"
+              height="38" /></a>
+          <a href="#" class="mb-2 d-inline-block"> <img
+              src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/misc/btn-market.webp" height="38" /></a>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
     </div>
-    <!-- Footer End -->
-  
-  
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
-  
-  
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-  
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-  </body>
-  
-  
+  </section>
+  <!-- Section: Links  -->
+  <div class="container">
+    <div class="py-4 border-top">
+      <div class="d-flex justify-content-between">
+        <!--- payment --->
+        <div class="text-dark">
+          <i class="fab fa-lg fa-cc-visa"></i>
+          <i class="fab fa-lg fa-cc-amex"></i>
+          <i class="fab fa-lg fa-cc-mastercard"></i>
+          <i class="fab fa-lg fa-cc-paypal"></i>
+        </div>
+        <!--- payment --->
+
+        <!--- language selector --->
+        <div class="dropdown dropup">
+          <a class="dropdown-toggle text-dark" href="#" id="Dropdown" role="button" data-mdb-toggle="dropdown"
+            aria-expanded="false"> <i class="flag-united-kingdom flag m-0"></i> English </a>
+
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="Dropdown">
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-united-kingdom flag"></i>English <i
+                  class="fa fa-check text-success ms-2"></i></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-poland flag"></i>Polski</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-china flag"></i>中文</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-japan flag"></i>日本語</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-germany flag"></i>Deutsch</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-france flag"></i>Français</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-spain flag"></i>Español</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-russia flag"></i>Русский</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-portugal flag"></i>Português</a>
+            </li>
+          </ul>
+        </div>
+        <!--- language selector --->
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Footer -->
+
+<!--Login Modal-->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+      </div>
+      <div class="modal-body">
+        <form>
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email" id="form2Example1" class="form-control" placeholder="E-Mail" />
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <input type="password" id="form2Example2" class="form-control" placeholder="Password" />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Sign-In Modal-->
+<div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="SignInModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="SignInModal">Sign In</h1>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="signInForm">
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="form-outline">
+                <input type="text" class="form-control" placeholder="Ad" formControlName="name"/>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="form-outline">
+                <input type="text" class="form-control" placeholder="Soyad" formControlName="surname"/>
+              </div>
+            </div>
+          </div>
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email" class="form-control" placeholder="E-Mail" formControlName="email"/>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <input type="password" class="form-control" placeholder="Password" formControlName="password"/>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" (click) = "signIn(signInForm.value)">Sign In</button>
+      </div>
+    </div>
+  </div>
+</div>

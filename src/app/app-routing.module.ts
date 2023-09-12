@@ -12,6 +12,7 @@ const routes: Routes = [
     {path:"orders",loadChildren:()=>import("./admin/components/orders/orders.module").then(module => module.OrdersModule)},
   ],},
   {path:"",component:HomeComponent},
+  {path:"register",loadChildren:()=>import("./ui/components/register/register.module").then(module => module.RegisterModule)},
 ]
 
 @NgModule({
