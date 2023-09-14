@@ -540,20 +540,20 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
       </div>
       <div class="modal-body">
-        <form>
+        <form [formGroup]="loginForm">
           <!-- Email input -->
           <div class="form-outline mb-4">
-            <input type="email" id="form2Example1" class="form-control" placeholder="E-Mail" />
+            <input type="email" id="form2Example1" class="form-control" placeholder="E-Mail" formControlName="email"/>
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-4">
-            <input type="password" id="form2Example2" class="form-control" placeholder="Password" />
+            <input type="password" id="form2Example2" class="form-control" placeholder="Password" formControlName="password"/>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Login</button>
+        <button type="button" class="btn btn-primary" (click) = "login(loginForm.value)">Login</button>
       </div>
     </div>
   </div>
