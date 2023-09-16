@@ -5,10 +5,15 @@ import { CustomToastrService, MessageType, ToastrPosition } from 'src/app/servic
 export const authGuard: CanActivateFn = (route, state) => {
 
   const authService = inject(AuthService);
+  const router = inject(Router);
+  const toastr = inject(CustomToastrService);
   authService.identityCheck();
   if (authService.isAuthenticated) {
     return true
-  } else {
+  } 
+  else {
+    router.navigate([""],{queryParams:{returnUrl:state.url}})
+    toastr.message("Bu Sayfaya Erişmek İçin Giriş Yapmanız Gerekmektedir.","Uyarı",MessageType.Info,ToastrPosition.TopRight);
     return false;
   }
 

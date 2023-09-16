@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { delay } from 'rxjs';
 import { User } from 'src/app/Entities/user';
@@ -19,7 +19,7 @@ export class HomeComponent {
   signInForm: FormGroup;
   loginForm: FormGroup;
   tokenIsOk:boolean = false;
-  constructor(private toastr: CustomToastrService, private formBuilder: FormBuilder, private userService: UserService,private jwtHelper:JwtHelperService,private router:Router,public authService:AuthService) {
+  constructor(private toastr: CustomToastrService, private formBuilder: FormBuilder, private userService: UserService,private jwtHelper:JwtHelperService,private router:Router,public authService:AuthService,private activatedRoute:ActivatedRoute) {
     this.signInForm = formBuilder.group({
       name: ["", [Validators.required, Validators.minLength(3)]],
       surname: ["", [Validators.required]],
@@ -51,11 +51,17 @@ export class HomeComponent {
 
   async login(data: LoginUser) {
     if (this.loginForm.valid) {
-      const result: LoginUserResponse = await this.userService.login(data);
+      const result: LoginUserResponse = await this.userService.login(data,()=>{});
       if (result.succeded === true) {
-        this.toastr.message(result.message, "Başarılı", MessageType.Success, ToastrPosition.TopLeft)
         localStorage.setItem("accessToken",result.token.accessToken);
+        this.toastr.message(result.message, "Başarılı", MessageType.Success, ToastrPosition.TopLeft)
         this.authService.identityCheck();
+        this.activatedRoute.queryParams.subscribe(params => {
+          const returnUrl = params["returnUrl"];
+          if(returnUrl){
+            this.router.navigate([returnUrl]);
+          }
+        })
         this.reload();
       }
       else {
