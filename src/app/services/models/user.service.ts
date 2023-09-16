@@ -4,13 +4,13 @@ import { User } from 'src/app/Entities/user';
 import { CreateUserResponse } from 'src/app/contracts/Users/create_user';
 import { Observable, firstValueFrom } from 'rxjs';
 import { LoginUser, LoginUserResponse } from 'src/app/contracts/Users/login_user';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-
-  constructor(private httpClientService: HttpClientService) { }
+  constructor(private httpClientService: HttpClientService,private router:Router) { }
 
   async signIn(user: User): Promise<CreateUserResponse> {
     const observable: Observable<CreateUserResponse | User> = this.httpClientService.post<CreateUserResponse | User>({ controller: "User" }, user);

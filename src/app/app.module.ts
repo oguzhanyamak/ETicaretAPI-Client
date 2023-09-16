@@ -7,7 +7,7 @@ import { UIModule } from './ui/ui.module';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { StatusDirective } from './directives/admin/status.directive';
+import { JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -20,9 +20,10 @@ import { StatusDirective } from './directives/admin/status.directive';
     AdminModule,
     UIModule,
     ToastrModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    JwtModule.forRoot({ config: { tokenGetter: () => localStorage.getItem("accessToken"), allowedDomains: ["localhost:7126"] } })
   ],
-  providers: [{provide:"baseUrl",useValue:"https://localhost:7126/api",multi:true}],
+  providers: [{ provide: "baseUrl", useValue: "https://localhost:7126/api", multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
