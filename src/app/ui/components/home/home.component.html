@@ -420,7 +420,9 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="login(loginForm.value)">Login</button>
+        <asl-google-signin-button type='icon' size='medium'></asl-google-signin-button>
+        <button class="btn"><i class="bi bi-facebook"></i></button>
+        <button type="button" class="btn btn-primary ms-auto" (click)="login(loginForm.value)">Login</button>
       </div>
     </div>
   </div>
@@ -459,7 +461,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" (click)="signIn(signInForm.value)">Sign In</button>
+        <button class="btn"><i class="bi bi-facebook"></i></button>
+        <button type="submit" class="btn btn-primary ms-auto" (click)="signIn(signInForm.value)">Sign In</button>
       </div>
     </div>
   </div>

@@ -1,3 +1,4 @@
+import { SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -18,8 +19,7 @@ import { UserService } from 'src/app/services/models/user.service';
 export class HomeComponent {
   signInForm: FormGroup;
   loginForm: FormGroup;
-  tokenIsOk:boolean = false;
-  constructor(private toastr: CustomToastrService, private formBuilder: FormBuilder, private userService: UserService,private jwtHelper:JwtHelperService,private router:Router,public authService:AuthService,private activatedRoute:ActivatedRoute) {
+  constructor(private toastr: CustomToastrService, private formBuilder: FormBuilder, private userService: UserService,private jwtHelper:JwtHelperService,private router:Router,public authService:AuthService,private activatedRoute:ActivatedRoute,private socialAuthService:SocialAuthService) {
     this.signInForm = formBuilder.group({
       name: ["", [Validators.required, Validators.minLength(3)]],
       surname: ["", [Validators.required]],
@@ -31,6 +31,10 @@ export class HomeComponent {
       password: ["", [Validators.required, Validators.minLength(6)]]
     });
     this.authService.identityCheck();
+    socialAuthService.authState.subscribe((user:SocialUser)=>{
+      userService.GoogleLogin(user);
+      this.authService.identityCheck();
+    });
   }
 
   async signIn(data: User) {
@@ -48,6 +52,11 @@ export class HomeComponent {
     }
 
   }
+
+  async signInGoogle(data:SocialUser){
+
+  }
+
 
   async login(data: LoginUser) {
     if (this.loginForm.valid) {

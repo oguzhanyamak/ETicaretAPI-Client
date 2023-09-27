@@ -5,6 +5,7 @@ import { CreateUserResponse } from 'src/app/contracts/Users/create_user';
 import { Observable, firstValueFrom } from 'rxjs';
 import { LoginUser, LoginUserResponse } from 'src/app/contracts/Users/login_user';
 import { Router } from '@angular/router';
+import { SocialUser } from '@abacritt/angularx-social-login';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,20 @@ export class UserService {
   }
 
   async login(loginData: LoginUser, callBackFunction: () => void):Promise<LoginUserResponse> {
-    const observable: Observable<LoginUserResponse | LoginUser> = this.httpClientService.post({ controller: "User", action: "Login" }, loginData);
+    const observable: Observable<LoginUserResponse | LoginUser> = this.httpClientService.post({ controller: "Auth", action: "Login" }, loginData);
     callBackFunction();
     return await firstValueFrom(observable) as LoginUserResponse;
+  }
+
+  async GoogleLogin(loginData:SocialUser):Promise<any>{
+    const observable:Observable<LoginUserResponse | SocialUser> = this.httpClientService.post({controller:"Auth",action:"GoogleLogin"},loginData)
+    const response:LoginUserResponse = await firstValueFrom(observable) as LoginUserResponse;
+
+    if(response.succeded){
+      localStorage.setItem("accessToken",response.token.accessToken);
+    }
+    else{
+
+    }
   }
 }
