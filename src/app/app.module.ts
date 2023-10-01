@@ -5,12 +5,13 @@ import { AppComponent } from './app.component';
 import { AdminModule } from './admin/admin.module';
 import { UIModule } from './ui/ui.module';
 import { ToastrModule } from 'ngx-toastr';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JwtModule } from '@auth0/angular-jwt';
 import { GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { HomeComponent } from './ui/components/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpErrorHandlerInterceptorService } from './services/http-error-handler-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -46,8 +47,10 @@ import { ReactiveFormsModule } from '@angular/forms';
       onError: (err:any) => {
         console.error(err);
       }
-    } as SocialAuthServiceConfig,
-  }],
+    } as SocialAuthServiceConfig
+  },
+  {provide : HTTP_INTERCEPTORS, useClass:HttpErrorHandlerInterceptorService,multi:true}  
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

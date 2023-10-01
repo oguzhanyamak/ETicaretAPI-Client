@@ -9,4 +9,9 @@ export class LoginUserResponse{
     message:string = "";
     succeded:boolean = false;
     token: Token = new Token; 
+    
+}
+
+export class refreshTokenLogin{
+    refToken:string|null = "";
 }

@@ -62,7 +62,6 @@ export class HomeComponent {
     if (this.loginForm.valid) {
       const result: LoginUserResponse = await this.userService.login(data,()=>{});
       if (result.succeded === true) {
-        localStorage.setItem("accessToken",result.token.accessToken);
         this.toastr.message(result.message, "Başarılı", MessageType.Success, ToastrPosition.TopLeft)
         this.authService.identityCheck();
         this.activatedRoute.queryParams.subscribe(params => {
