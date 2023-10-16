@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClientService } from '../http-client.service';
 import { CreateProduct } from 'src/app/contracts/create-product';
 import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { ListProduct } from 'src/app/contracts/list-product';
+import { Product } from 'src/app/contracts/list-product';
 import { first, firstValueFrom } from 'rxjs';
 
 @Injectable({
@@ -36,8 +36,8 @@ export class ProductService {
     );
   }
 
-  async read(successCallBack: () => void,errorCallBack: (errorMessage: string) => void): Promise<ListProduct[]> {
-    const promiseData = this.httpClientService.get<ListProduct[]>({ controller: "products" });
+  async read(successCallBack: () => void,errorCallBack: (errorMessage: string) => void): Promise<Product[]> {
+    const promiseData = this.httpClientService.get<Product[]>({ controller: "Product"});
     try {
       const data = await firstValueFrom(promiseData);
       successCallBack();

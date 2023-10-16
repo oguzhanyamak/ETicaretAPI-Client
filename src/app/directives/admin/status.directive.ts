@@ -1,4 +1,5 @@
-import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, HostListener, Input, Output, Renderer2 } from '@angular/core';
+import { Product } from 'src/app/contracts/list-product';
 import { CustomToastrService, MessageType, ToastrPosition } from 'src/app/services/custom-toastr.service';
 import { HttpClientService } from 'src/app/services/http-client.service';
 import { ProductService } from 'src/app/services/models/product.service';
@@ -7,28 +8,44 @@ import { ProductService } from 'src/app/services/models/product.service';
   selector: '[appStatus]'
 })
 export class StatusDirective {
-  @Input() id: string = "";
-  @Input() controller: string = "";
-  @Input() status: boolean = true;
+  @Input() product:Product|undefined;
+  @Input() controller: string = "Product";
+  @Output() refreshPage:EventEmitter<any>;
+
 
   constructor(private element: ElementRef, private _renderer: Renderer2, private httpClientService:HttpClientService,private toastrService:CustomToastrService) {
-    const btn = this._renderer.createElement("button");
-    btn.textContent = "Yayından Kaldır";
-    btn.setAttribute("class", "btn btn btn-danger");
-    _renderer.appendChild(element.nativeElement, btn);
-
+    
+    /*const btn = this._renderer.createElement("button");
+    if(this.status === true){
+      btn.textContent = "Yayından Kaldır";
+      btn.setAttribute("class", "btn btn-danger");
+    }else{
+      btn.textContent = "Yayına Al";
+      btn.setAttribute("class", "btn btn-success");
+    }
+    _renderer.appendChild(element.nativeElement, btn);*/
+    this.refreshPage = new EventEmitter();
   }
 
   @HostListener("click")
   async onclick() {
-    this.httpClientService.delete({controller:this.controller},this.id).subscribe({
-      complete:()=>{
-        this.toastrService.message("Ürün yayından kaldırılmıştır","Başarılı",MessageType.Success,ToastrPosition.TopLeft);
-      },
-      error:()=>{
-        this.toastrService.message("Beklenmedik bir hata oluştu","Başarısız",MessageType.Error,ToastrPosition.TopLeft);
-      }
-    });
+    if(this.product != null){
+      console.log(this.product?.isActive);
+      this.product.isActive = !this.product.isActive;
+      this.httpClientService.put({controller:this.controller},this.product!).subscribe({
+        complete:()=>{
+          this.toastrService.message("Ürün yayından kaldırılmıştır","Başarılı",MessageType.Success,ToastrPosition.TopLeft);
+          this.refreshPage?.emit();
+        },
+        error:()=>{
+          this.toastrService.message("Beklenmedik bir hata oluştu","Başarısız",MessageType.Error,ToastrPosition.TopLeft);
+        }
+      });
+    }
+    else{
+      this.toastrService.message("Beklenmedik bir hata oluştu","Başarısız",MessageType.Error,ToastrPosition.TopLeft);
+    }
+
   }
 
 }
