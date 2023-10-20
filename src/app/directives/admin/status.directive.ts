@@ -14,16 +14,6 @@ export class StatusDirective {
 
 
   constructor(private element: ElementRef, private _renderer: Renderer2, private httpClientService:HttpClientService,private toastrService:CustomToastrService) {
-    
-    /*const btn = this._renderer.createElement("button");
-    if(this.status === true){
-      btn.textContent = "Yayından Kaldır";
-      btn.setAttribute("class", "btn btn-danger");
-    }else{
-      btn.textContent = "Yayına Al";
-      btn.setAttribute("class", "btn btn-success");
-    }
-    _renderer.appendChild(element.nativeElement, btn);*/
     this.refreshPage = new EventEmitter();
   }
 

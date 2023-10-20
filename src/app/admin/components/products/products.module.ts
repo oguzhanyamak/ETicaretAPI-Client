@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { CreateComponent } from './create/create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StatusDirective } from 'src/app/directives/admin/status.directive';
-
+import {FormsModule} from '@angular/forms';
 
 
 
@@ -18,6 +18,7 @@ import { StatusDirective } from 'src/app/directives/admin/status.directive';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    FormsModule,
     RouterModule.forChild([
       {path:"",component:ProductsComponent},
       {path:"add",component:CreateComponent}

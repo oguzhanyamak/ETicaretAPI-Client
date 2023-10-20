@@ -14,7 +14,7 @@ export class ProductService {
 
 
   create(product: CreateProduct|any, successCallBack?: any, errorCallBack?: (errorMessage: string) => void) {
-    this.httpClientService.post({ controller: "Product",action:"Upload"}, product).subscribe(
+    this.httpClientService.post<boolean>({ controller: "Product"}, product).subscribe(
       {
         error: (errorResponse: HttpErrorResponse) => {
           const _error: Array<{ key: string, value: Array<string> }> = errorResponse.error;
@@ -26,11 +26,8 @@ export class ProductService {
           });
           errorCallBack!(message);
         },
-        complete: () => {
-          successCallBack()
-        },
         next: (data) => {
-
+          successCallBack();
         }
       }
     );
@@ -56,6 +53,16 @@ export class ProductService {
   async delete(id:string){
     const deleteObs = this.httpClientService.delete({controller:"products"},id);
     return await firstValueFrom(deleteObs);
+  }
+
+  async uploadImage(data:any){
+    const resultData = this.httpClientService.put({controller:"Product",action:"Upload"},data);
+    return await firstValueFrom(resultData);
+  }
+
+  async getByName(prodName:string):Promise<Product[]>{
+    const datas = this.httpClientService.get({controller:"Product",action:"GetByName"},prodName);
+    return await firstValueFrom(datas) as Product[];
   }
 
 }

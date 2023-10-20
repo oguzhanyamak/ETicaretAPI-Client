@@ -4,8 +4,8 @@
       <div class="search">
         <i class="fa fa-search"></i>
         <input type="text" class="form-control"
-          placeholder="Ürününüzün ID değerini biliyorsanız girin aksi taktirde Ürün adı üzerinden arama yapılacaktır">
-        <button class="btn btn-primary">Search</button>
+          placeholder="Ürününüzün ID değerini biliyorsanız girin aksi taktirde Ürün adı üzerinden arama yapılacaktır" [(ngModel)]=prodName>
+        <button class="btn btn-primary" (click)="searchByName()">Search</button>
       </div>
     </div>
   </div>
