@@ -29,7 +29,7 @@ import { HttpErrorHandlerInterceptorService } from './services/http-error-handle
     UIModule,
     ToastrModule.forRoot(),
     HttpClientModule,
-    JwtModule.forRoot({ config: { tokenGetter: () => localStorage.getItem("accessToken"), allowedDomains: ["localhost:7126"] } }),
+    JwtModule.forRoot({ config: { tokenGetter: () => localStorage.getItem("accessToken"), allowedDomains: ["localhost:7126"] ,headerName:"Authorization"} }),
     
   ],
   providers: [{ provide: "baseUrl", useValue: "https://localhost:7126/api", multi: true },{

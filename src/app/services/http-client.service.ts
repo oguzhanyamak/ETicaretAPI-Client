@@ -24,6 +24,8 @@ export class HttpClientService {
     return this.httpClient.get<T>(url, { headers: param.headers })
   }
 
+  //Authorization", "Bearer " + accessToken
+
   post<T>(param: Partial<RequestParameters>, body: Partial<T>): Observable<T> {
     let url: string = "";
     if (param.fullEndPoint)

@@ -1,0 +1,28 @@
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="loginForm">
+  
+            <div class="form-outline mb-4">
+              <input type="email" id="form2Example1" class="form-control" placeholder="E-Mail" formControlName="email" />
+            </div>
+  
+  
+            <div class="form-outline mb-4">
+              <input type="password" id="form2Example2" class="form-control" placeholder="Password"
+                formControlName="password" />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <asl-google-signin-button type='icon' size='medium'></asl-google-signin-button>
+          <button class="btn"><i class="bi bi-facebook"></i></button>
+          <button type="button" class="btn btn-primary ms-auto" (click)="login(loginForm.value)">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>

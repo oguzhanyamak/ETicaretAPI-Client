@@ -27,7 +27,6 @@ export class HttpErrorHandlerInterceptorService implements HttpInterceptor {
         default:
           this.toastr.message("Hata","Bilinmeyen Bir Hata Oluştu",MessageType.Warning,ToastrPosition.TopRight);
           break;
-
       }
       return of(error);
     }));
