@@ -12,11 +12,13 @@ import { GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig,
 import { HomeComponent } from './ui/components/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpErrorHandlerInterceptorService } from './services/http-error-handler-interceptor.service';
+import { DynamicComponentLoaderDirective } from './directives/dynamic-component-loader.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    DynamicComponentLoaderDirective
   ],
   imports: [
     BrowserModule,
