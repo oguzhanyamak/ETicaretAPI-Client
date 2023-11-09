@@ -34,7 +34,8 @@ import { DynamicComponentLoaderDirective } from './directives/dynamic-component-
     JwtModule.forRoot({ config: { tokenGetter: () => localStorage.getItem("accessToken"), allowedDomains: ["localhost:7126"] ,headerName:"Authorization"} }),
     
   ],
-  providers: [{ provide: "baseUrl", useValue: "https://localhost:7126/api", multi: true },{
+  providers: [{ provide: "baseUrl", useValue: "https://localhost:7126/api", multi: true },
+              { provide: "baseSignalRUrl", useValue: "https://localhost:7126/", multi: true },{
     provide: 'SocialAuthServiceConfig',
     useValue: {
       autoLogin: false,
