@@ -11,12 +11,15 @@ import { HubUrls, ReceiveFunctions, SignalRService } from 'src/app/services/sign
 export class DashboardComponent {
 
   constructor(private signalRService:SignalRService,private toastrService:CustomToastrService) {
-    signalRService.start(HubUrls.OrderHub);
+
   }
 
   ngOnInit():void {
-    this.signalRService.on(ReceiveFunctions.OrderAddedMessageReceiveFunction,message => {
+    this.signalRService.on(HubUrls.OrderHub,ReceiveFunctions.OrderAddedMessageReceiveFunction,message => {
       this.toastrService.message(message,"Order",MSGT.Success,ToastrPosition.TopRight)
+    });
+    this.signalRService.on(HubUrls.ProductHub,ReceiveFunctions.ProductAddedMessageReceiveFunction,message => {
+      this.toastrService.message(message,"Product",MSGT.Success,ToastrPosition.TopRight)
     })
   }
 }
