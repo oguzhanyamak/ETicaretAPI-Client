@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RegisterModule } from './register/register.module';
 import { LoginModule } from './login/login.module';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
+import { PasswordResetModule } from './password-reset/password-reset.module';
 
 
 
@@ -12,9 +14,10 @@ import { LoginModule } from './login/login.module';
   imports: [
     CommonModule,
     RegisterModule,
-    LoginModule
+    LoginModule,
+    PasswordResetModule
     //HomeModule
   ],
-  exports:[RegisterModule,LoginModule]
+  exports:[RegisterModule,LoginModule,PasswordResetModule]
 })
 export class ComponentsModule { }

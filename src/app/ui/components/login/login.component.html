@@ -8,11 +8,12 @@
       <div class="form-outline mb-4">
         <input type="email" id="form2Example1" class="form-control" placeholder="E-Mail" formControlName="email" />
       </div>
-
-
       <div class="form-outline mb-4">
         <input type="password" id="form2Example2" class="form-control" placeholder="Password"
           formControlName="password" />
+      </div>
+      <div class="hstack">
+        <a href="" class="stretched-link ms-auto" data-bs-target="#passwordResetModal">Forgot Password</a>
       </div>
     </form>
   </div>
@@ -21,4 +22,5 @@
     <button class="btn"><i class="bi bi-facebook"></i></button>
     <button type="button" class="btn btn-primary ms-auto" (click)="login(loginForm.value)">Login</button>
   </div>
+  <router-outlet></router-outlet>
 </div>
